@@ -12,7 +12,7 @@
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/rewindbytes/lri.git
+   git clone https://github.com/qbb84/lri.git
    cd lri
 
 2. **Build and Run**
