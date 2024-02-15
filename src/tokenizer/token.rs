@@ -1,4 +1,4 @@
-use std::fmt::{write, Display, Formatter};
+use std::fmt::{Display, Formatter};
 
 #[derive(PartialEq, Debug)]
 pub struct Token {
@@ -28,6 +28,11 @@ pub enum TokenKind {
     RBRACE,
     FUNCTION,
     LET,
+    TRUE,
+    FALSE,
+    IF,
+    ELSE,
+    RETURN,
 }
 
 impl Display for TokenKind {
@@ -53,6 +58,11 @@ impl Display for TokenKind {
             TokenKind::SLASH => write!(f, "/"),
             TokenKind::LT => write!(f, "<"),
             TokenKind::GT => write!(f, ">"),
+            TokenKind::TRUE => write!(f, "true"),
+            TokenKind::FALSE => write!(f, "false"),
+            TokenKind::IF => write!(f, "if"),
+            TokenKind::ELSE => write!(f, "else"),
+            TokenKind::RETURN => write!(f, "return"),
         }
     }
 }
@@ -61,6 +71,11 @@ pub fn lookup_ident(identifier: &String) -> TokenKind {
     match identifier.as_str() {
         "fn" => TokenKind::FUNCTION,
         "let" => TokenKind::LET,
+        "true" => TokenKind::TRUE,
+        "false" => TokenKind::FALSE,
+        "if" => TokenKind::IF,
+        "else" => TokenKind::ELSE,
+        "return" => TokenKind::RETURN,
         _ => TokenKind::IDENT,
     }
 }
