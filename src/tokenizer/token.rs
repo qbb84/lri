@@ -33,6 +33,8 @@ pub enum TokenKind {
     IF,
     ELSE,
     RETURN,
+    EQ,
+    NOTEQ,
 }
 
 impl Display for TokenKind {
@@ -63,6 +65,8 @@ impl Display for TokenKind {
             TokenKind::IF => write!(f, "if"),
             TokenKind::ELSE => write!(f, "else"),
             TokenKind::RETURN => write!(f, "return"),
+            TokenKind::EQ => write!(f, "=="),
+            TokenKind::NOTEQ => write!(f, "!="),
         }
     }
 }
